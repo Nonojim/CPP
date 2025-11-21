@@ -6,7 +6,7 @@
 /*   By: npederen <npederen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 15:29:42 by npederen          #+#    #+#             */
-/*   Updated: 2025/11/21 13:43:19 by npederen         ###   ########.fr       */
+/*   Updated: 2025/11/21 18:03:06 by npederen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,16 @@ Contact::Contact(void)
 Contact::~Contact(void)
 {
 	std::cout << "Contact destructor called" << std::endl;
+}
+
+void Contact::addContact(std::string firstName, std::string lastName, std::string nickName, std::string secret, std::string number, int index)
+{
+	this->firstName = firstName;
+	this->lastName = lastName;
+	this->nickName = nickName;
+	this->darkestSecret = secret;
+	this->phoneNumber = number;
+	this->index = index;
 }
 
 std::string Contact::truncateStrTen(std::string str)

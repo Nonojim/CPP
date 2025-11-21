@@ -4,24 +4,32 @@ FILES		=	main.cpp		\
 
 NAME		= PhoneBook
 
-RM			= rm -f
+RM			= rm -rf
 
 CC			= c++
 
 CFLAGS		= -Wall -Wextra -Werror -std=c++98 -g
 
-OBJ		= $(FILES:.cpp=.o)
+OBJ		= $(addprefix $(OBJDIR)/, $(FILES:.cpp=.o))
+
+OBJDIR = obj
 
 all:		${NAME}
 
 $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
+$(OBJDIR)/%.o: %.cpp
+	@mkdir -p $(dir $@)
+	@$(CC) $(CFLAGS) -c $< -o $@
+
 clean:
-	$(RM) $(OBJ)
+	@echo "\033[1;32m" "Cleaning .o \033[0m"
+	@$(RM) $(OBJDIR)
 
 fclean: clean
-	$(RM) $(NAME)
+	@echo "\033[1;32m" "Cleaning program \033[0m"
+	@$(RM) $(NAME)
 
 re: fclean all
 
