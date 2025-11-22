@@ -6,7 +6,7 @@
 /*   By: npederen <npederen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 15:28:54 by npederen          #+#    #+#             */
-/*   Updated: 2025/11/21 20:21:20 by npederen         ###   ########.fr       */
+/*   Updated: 2025/11/22 14:28:33 by npederen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,16 @@ int	PhoneBook::getCounter(void)
 {
 	return (this->count);
 }
-void	PhoneBook::showContact(void)
+
+
+void	PhoneBook::showContacts(void)
 {
 	int i = 0;
 	while (i < this->count)
 		this->contacts[i++].displayContactTab();
 }
 
+void PhoneBook::showDataContact(int index)
+{
+	contacts[index].displayContactData();
+}

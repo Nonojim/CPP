@@ -6,7 +6,7 @@
 /*   By: npederen <npederen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 15:29:45 by npederen          #+#    #+#             */
-/*   Updated: 2025/11/21 20:19:51 by npederen         ###   ########.fr       */
+/*   Updated: 2025/11/22 14:28:33 by npederen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,11 @@ class PhoneBook
 		~PhoneBook();
 		void	addToPhoneBook(std::string firstName, std::string lastName,
 			std::string nickName, std::string secret, std::string number);
-		void	showContact(void);
+		void	showContacts(void);
 		int		getCounter(void);
+		Contact &getContact(int index);
+		void	showDataContact(int index);
+
 };
 
 #endif

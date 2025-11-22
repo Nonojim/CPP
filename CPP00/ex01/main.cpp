@@ -6,7 +6,7 @@
 /*   By: npederen <npederen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 14:05:36 by npederen          #+#    #+#             */
-/*   Updated: 2025/11/21 20:38:15 by npederen         ###   ########.fr       */
+/*   Updated: 2025/11/22 15:00:56 by npederen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,20 +41,34 @@ void	addContact(PhoneBook &pagesJaunes)
 	number = askData(number);
 	pagesJaunes.addToPhoneBook(firstname, lastname, nickname, secret, number);
 }
+
 void	searchContact(PhoneBook &pagesJaunes)
 {
 	int	index;
+	std::string str;
 	if (pagesJaunes.getCounter() == 0)
 	{
 		std::cout << "No contact registered" << std::endl;
 		return ;
 	}
 	std::cout << "     index| firstname|  lastname|  nickname" << std::endl;
-	pagesJaunes.showContact();
-	std::cout << "Please enter the desired index" << std::endl;
-	std::cin >> index;
-	pagesJaunes.contacts[index].displayContactData();
-	
+	pagesJaunes.showContacts();
+	while (1)
+	{
+		std::cout << "Please enter the desired index or EXIT" << std::endl;
+		if (std::getline(std::cin, str) == false)
+			break ;
+		if (str == "EXIT")
+			break ;
+		else if (str[0] >= 48 && str[0] <= 55 && str.length() == 1)
+		{
+			index = str[0] - 48;
+			pagesJaunes.showDataContact(index);
+			break ;
+		}
+		else
+			std::cout << "Please enter a valid index between 0 and 7 inclusive" << std::endl;
+	}
 }
 
 int	main(void)

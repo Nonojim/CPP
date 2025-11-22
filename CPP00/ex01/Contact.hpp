@@ -6,7 +6,7 @@
 /*   By: npederen <npederen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 15:29:45 by npederen          #+#    #+#             */
-/*   Updated: 2025/11/21 18:38:28 by npederen         ###   ########.fr       */
+/*   Updated: 2025/11/22 00:36:17 by npederen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ class Contact
 		void		displayContactData(void);
 		void		addContact(std::string firstName, std::string lastName,
 		std::string nickName, std::string secret, std::string number, int index);
-
 };
 
 #endif
