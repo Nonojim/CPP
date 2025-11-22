@@ -6,7 +6,7 @@
 /*   By: npederen <npederen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 15:29:42 by npederen          #+#    #+#             */
-/*   Updated: 2025/11/22 00:36:10 by npederen         ###   ########.fr       */
+/*   Updated: 2025/11/22 17:00:14 by npederen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,3 @@ void Contact::displayContactData(void)
 	std::cout << "phoneNumber : " << this->phoneNumber << std::endl;
 	std::cout << "darkestSecret : " << this->darkestSecret << std::endl;
 }
-
-
