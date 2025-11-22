@@ -6,7 +6,7 @@
 /*   By: npederen <npederen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 15:34:06 by npederen          #+#    #+#             */
-/*   Updated: 2025/11/22 17:55:14 by npederen         ###   ########.fr       */
+/*   Updated: 2025/11/22 18:15:43 by npederen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,9 @@ void	Account::_displayTimestamp(void)
 {
 	//how many sec since unix
 	time_t now = time(NULL);
-	//struct containing a calendar date
+	//struct containing all the units of the time in int
 	tm* t = localtime(&now);
+	//to refactor when we reach year 10000
 	char buffer[18];
 	//formating date YearMonthDay_HourMinute_Seconde
 	strftime(buffer, sizeof(buffer), "[%Y%m%d_%H%M%S]", t);
