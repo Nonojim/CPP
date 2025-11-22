@@ -6,7 +6,7 @@
 /*   By: npederen <npederen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 15:34:06 by npederen          #+#    #+#             */
-/*   Updated: 2025/11/22 16:41:15 by npederen         ###   ########.fr       */
+/*   Updated: 2025/11/22 16:54:39 by npederen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,15 @@ void Account::displayStatus() const
 {
 	std::cout << "[display timestamp]" << " index:" << _accountIndex << ";amount:"
 		<< _amount << ";deposits:" << _nbDeposits << ":withdrawals:" << _nbWithdrawals << std::endl;
+}
+
+void Account::makeDeposit(int deposit)
+{
+	_nbDeposits++;
+	_totalNbDeposits++;
+	std::cout << "[display timestamp]" << " index:" << _accountIndex << ";p_amount:"
+		<< _amount << ";deposits:" << deposit << ";amount:" << _amount + deposit << ";nb_deposits:" << _nbDeposits <<  std::endl;
+	_amount += deposit;
+	_totalAmount += deposit;
+
 }
