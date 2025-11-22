@@ -6,7 +6,7 @@
 /*   By: npederen <npederen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 15:34:06 by npederen          #+#    #+#             */
-/*   Updated: 2025/11/22 17:50:14 by npederen         ###   ########.fr       */
+/*   Updated: 2025/11/22 17:55:14 by npederen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,26 @@ Account :: ~Account(void)
 	std::cout << " index:" << _accountIndex << ";amount:"
 		<< _amount << ";closed" << std::endl;
 
+}
+
+int	Account::getNbAccounts( void )
+{
+	return (_nbAccounts);
+}
+
+int	Account::getTotalAmount( void )
+{
+	return (_totalAmount);
+}
+
+int	Account::getNbDeposits( void )
+{
+	return (_totalNbDeposits);
+}
+
+int	Account::getNbWithdrawals( void )
+{
+	return (_totalNbWithdrawals);
 }
 
 void	Account::_displayTimestamp(void)
