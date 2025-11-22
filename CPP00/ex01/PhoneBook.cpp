@@ -6,7 +6,7 @@
 /*   By: npederen <npederen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 15:28:54 by npederen          #+#    #+#             */
-/*   Updated: 2025/11/22 14:28:33 by npederen         ###   ########.fr       */
+/*   Updated: 2025/11/22 15:14:09 by npederen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 PhoneBook::PhoneBook(void)
 {
 	this->count = 0;
+	this->size = 0;
 	std::cout << "PhoneBook constructor called" << std::endl;
 }
 
@@ -30,6 +31,8 @@ void PhoneBook::addToPhoneBook(std::string firstName, std::string lastName,
 		this->count = 0;
 	this->contacts[this->count].addContact(firstName, lastName, nickName, secret, number, count);
 	this->count++;
+	if (this->size < 8)
+		this->size++;
 }
 int	PhoneBook::getCounter(void)
 {
@@ -40,11 +43,11 @@ int	PhoneBook::getCounter(void)
 void	PhoneBook::showContacts(void)
 {
 	int i = 0;
-	while (i < this->count)
+	while (i < this->size)
 		this->contacts[i++].displayContactTab();
 }
 
 void PhoneBook::showDataContact(int index)
 {
-	contacts[index].displayContactData();
+	this->contacts[index].displayContactData();
 }
