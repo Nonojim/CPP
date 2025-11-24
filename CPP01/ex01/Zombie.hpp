@@ -6,23 +6,24 @@
 /*   By: npederen <npederen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 18:53:37 by npederen          #+#    #+#             */
-/*   Updated: 2025/11/24 20:19:55 by npederen         ###   ########.fr       */
+/*   Updated: 2025/11/24 22:25:56 by npederen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include <iostream>
 #include <string>
 
-class Zombie {
+class Zombie
+{
 
-	private :
+	private:
 		std::string name;
-	public :
+
+	public:
 		Zombie();
 		~Zombie();
 		Zombie(std::string name);
-		void	setName( std::string name);
-		std::string	getName(void);
-		void	announce(void) const;
+		void setName(std::string name);
+		std::string getName(void);
+		void announce(void) const;
 };
