@@ -6,7 +6,7 @@
 /*   By: npederen <npederen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 18:53:37 by npederen          #+#    #+#             */
-/*   Updated: 2025/11/24 22:25:56 by npederen         ###   ########.fr       */
+/*   Updated: 2025/11/24 23:19:50 by npederen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 class Zombie
 {
-
 	private:
 		std::string name;
 
