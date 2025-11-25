@@ -6,10 +6,12 @@
 /*   By: npederen <npederen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 18:53:37 by npederen          #+#    #+#             */
-/*   Updated: 2025/11/24 23:19:50 by npederen         ###   ########.fr       */
+/*   Updated: 2025/11/25 01:02:46 by npederen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef ZOMBIE_HPP
+#define ZOMBIE_HPP
 #include <iostream>
 #include <string>
 
@@ -26,3 +28,5 @@ class Zombie
 		std::string getName(void);
 		void announce(void) const;
 };
+
+#endif
