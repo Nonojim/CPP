@@ -6,13 +6,13 @@
 /*   By: npederen <npederen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 00:10:32 by npederen          #+#    #+#             */
-/*   Updated: 2025/11/25 02:37:34 by npederen         ###   ########.fr       */
+/*   Updated: 2025/11/25 14:03:46 by npederen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
 
-HumanB::HumanB()
+HumanB::HumanB() : weapon(NULL)
 {
 	std::cout << "Constructor HumanB called" << std::endl;
 }

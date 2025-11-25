@@ -6,7 +6,7 @@
 /*   By: npederen <npederen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 00:09:10 by npederen          #+#    #+#             */
-/*   Updated: 2025/11/25 02:27:37 by npederen         ###   ########.fr       */
+/*   Updated: 2025/11/25 14:08:47 by npederen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Weapon
 		Weapon();
 		Weapon(std::string);
 		~Weapon();
-		std::string const &getType(void);
+		const std::string &getType(void) const;
 		void setType(std::string);
 };
 
