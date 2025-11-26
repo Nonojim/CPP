@@ -73,6 +73,7 @@
 		"xtr1common": "cpp",
 		"xutility": "cpp",
 		"queue": "cpp",
-		"ranges": "cpp"
+		"ranges": "cpp",
+		"fstream": "cpp"
 	}
 }
