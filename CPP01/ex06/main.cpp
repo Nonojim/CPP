@@ -6,25 +6,21 @@
 /*   By: npederen <npederen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 19:32:19 by npederen          #+#    #+#             */
-/*   Updated: 2025/11/26 20:18:48 by npederen         ###   ########.fr       */
+/*   Updated: 2025/11/26 20:46:51 by npederen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
-int main(void)
+int main(int argc, char **argv)
 {
-	Harl harl;
 
-	std::cout << "input <DEBUG>" << std::endl;
-	harl.complain("DEBUG");
-	std::cout << "input <INFO>" << std::endl;
-	harl.complain("INFO");
-	std::cout << "input <WARNING>" << std::endl;
-	harl.complain("WARNING");
-	std::cout << "input <ERROR>" << std::endl;
-	harl.complain("ERROR");
-	std::cout << "input <badInput>" << std::endl;
-	harl.complain("badInput");
+	if (argc == 2)
+	{
+		Harl harl;
+		harl.complain(argv[1]);
+	}
+	else
+		std::cout << "Please follow example : ./harlFilter <filterOption>" << std::endl;
 	return (0);
 }

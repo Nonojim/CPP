@@ -6,7 +6,7 @@
 /*   By: npederen <npederen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 19:32:22 by npederen          #+#    #+#             */
-/*   Updated: 2025/11/26 20:48:00 by npederen         ###   ########.fr       */
+/*   Updated: 2025/11/26 21:02:21 by npederen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,14 +51,48 @@ void Harl::error(void)
 			  << std::endl;
 }
 
+// the comment </* fall through */> is for the compiler to tell him its intentionnal
 void Harl::complain(std::string level)
 {
 
-	int i = 0;
+	int i = -1;
+	if (level == "DEBUG")
+		i = 0;
+	else if (level == "INFO")
+		i = 1;
+	else if (level == "WARNING")
+		i = 2;
+	else if (level == "ERROR")
+		i = 3;
 	std::string levels[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 	void (Harl::*fn[])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
-	while (level != levels[i] && i < 4)
-		i++;
-	if (i < 4)
+	switch (i)
+	{
+	case 0:
+		std::cout << "[ DEBUG ]" << std::endl;
 		(this->*fn[i])();
+		std::cout << std::endl;
+		/* fall through */
+
+	case 1:
+		std::cout << "[ INFO ]" << std::endl;
+		(this->*fn[i])();
+		std::cout << std::endl;
+		/* fall through */
+
+	case 2:
+		std::cout << "[ WARNING ]" << std::endl;
+		(this->*fn[i])();
+		std::cout << std::endl;
+		/* fall through */
+
+	case 3:
+		std::cout << "[ ERROR ]" << std::endl;
+		(this->*fn[i])();
+		std::cout << std::endl;
+		break;
+
+	default:
+		std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+	}
 }
