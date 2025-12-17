@@ -6,7 +6,7 @@
 /*   By: npederen <npederen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 13:22:44 by npederen          #+#    #+#             */
-/*   Updated: 2025/12/17 14:30:42 by npederen         ###   ########.fr       */
+/*   Updated: 2025/12/17 14:34:00 by npederen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,7 @@ int main(void)
 	one.attack("Bullshark");
 	one.attack("Bullshark");
 	one.beRepaired(999);
+	one.takeDamage(999);
+	one.takeDamage(1);
 	return (0);
 }
