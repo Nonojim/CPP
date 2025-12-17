@@ -1,8 +1,9 @@
 FILES		=	main.cpp		\
 				ClapTrap.cpp	\
-				ScavTrap.cpp
+				ScavTrap.cpp	\
+				FragTrap.cpp
 				
-NAME		= ScavTrap
+NAME		= FragTrap
 
 RM			= rm -rf
 

@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: npederen <npederen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/17 13:22:44 by npederen          #+#    #+#             */
-/*   Updated: 2025/12/17 16:20:09 by npederen         ###   ########.fr       */
+/*   Created: 2025/12/17 18:10:07 by npederen          #+#    #+#             */
+/*   Updated: 2025/12/17 18:32:31 by npederen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef FRAGTRAP_HPP
+#define FRAGTRAP_HPP
 #include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
 
-int main(void)
+class FragTrap : public ClapTrap
 {
-	ScavTrap one("Jim");
-	one.guardGuate();
-	one.takeDamage(0);
-	one.attack("Bullshark");
-	one.attack("Bullshark");
-	one.attack("Bullshark");
-	one.attack("Bullshark");
-	one.attack("Bullshark");
-	one.attack("Bullshark");
-	one.attack("Bullshark");
-	one.attack("Bullshark");
-	one.attack("Bullshark");
-	one.attack("Bullshark");
-	one.attack("Bullshark");
-	one.beRepaired(999);
-	return (0);
-}
+	public:
+		FragTrap(void);
+		FragTrap(const std::string name);
+		FragTrap(const FragTrap &original);
+		~FragTrap();
+		FragTrap &operator=(const FragTrap &c);
+		void attack(const std::string &target);
+		void guardGuate();
+		void highFivesGuys();
+};
+
+#endif
