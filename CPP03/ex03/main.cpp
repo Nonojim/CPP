@@ -6,7 +6,7 @@
 /*   By: npederen <npederen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 13:22:44 by npederen          #+#    #+#             */
-/*   Updated: 2025/12/17 19:48:50 by npederen         ###   ########.fr       */
+/*   Updated: 2025/12/18 15:37:37 by npederen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,7 @@ int main(void)
 	DiamondTrap four(one);
 	four.whoAmI();
 	four.attack("BullShark");
+	four.guardGuate();
+	four.highFivesGuys();
 	return (0);
 }
