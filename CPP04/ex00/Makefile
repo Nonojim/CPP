@@ -1,9 +1,11 @@
 FILES		=	main.cpp		\
 				Dog.cpp			\
 				Animal.cpp		\
-				Cat.cpp
+				Cat.cpp			\
+				WrongCat.cpp	\
+				WrongAnimal.cpp
 
-NAME		= DiamondTrap
+NAME		= cries
 
 RM			= rm -rf
 

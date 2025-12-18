@@ -6,13 +6,13 @@
 /*   By: npederen <npederen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/18 15:52:00 by npederen          #+#    #+#             */
-/*   Updated: 2025/12/18 16:26:17 by npederen         ###   ########.fr       */
+/*   Updated: 2025/12/18 22:10:59 by npederen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat()
+Cat::Cat() : type("Cat")
 {
 	std::cout << "Default Cat constructor called" << std::endl;
 }
@@ -34,4 +34,9 @@ Cat &Cat::operator=(const Cat &c)
 	if (this != &c)
 		this->type = c.type;
 	return (*this);
+}
+
+void Cat::makeSound(void) const
+{
+	std::cout << "MEOW MEOW" << std::endl;
 }

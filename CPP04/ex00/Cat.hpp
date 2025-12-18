@@ -6,7 +6,7 @@
 /*   By: npederen <npederen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/18 15:51:56 by npederen          #+#    #+#             */
-/*   Updated: 2025/12/18 16:15:40 by npederen         ###   ########.fr       */
+/*   Updated: 2025/12/18 22:10:57 by npederen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class Cat : public Animal
 		~Cat();
 		Cat(const Cat &original);
 		Cat &operator=(const Cat &c);
+		void makeSound(void) const;
 };
 
 #endif

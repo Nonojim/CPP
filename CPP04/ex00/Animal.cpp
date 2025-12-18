@@ -6,7 +6,7 @@
 /*   By: npederen <npederen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/18 15:52:53 by npederen          #+#    #+#             */
-/*   Updated: 2025/12/18 16:25:29 by npederen         ###   ########.fr       */
+/*   Updated: 2025/12/18 22:11:01 by npederen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,6 @@ std::string Animal::getType(void) const
 
 void Animal::makeSound(void) const
 {
-	if (this->type == "Dog")
-		std::cout << "WOOF WOOF" << std::endl;
-	if (this->type == "Cat")
-		std::cout << "MEOW MEOW" << std::endl;
+	std::cout << "You hear an animal crying out but you do not know what it is."
+			  << std::endl;
 }
