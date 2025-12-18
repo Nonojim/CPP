@@ -6,7 +6,7 @@
 /*   By: npederen <npederen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 18:22:05 by npederen          #+#    #+#             */
-/*   Updated: 2025/12/17 19:42:46 by npederen         ###   ########.fr       */
+/*   Updated: 2025/12/18 15:06:21 by npederen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include "ClapTrap.hpp"
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
+
 class DiamondTrap : public ScavTrap, public FragTrap
 {
 	private:

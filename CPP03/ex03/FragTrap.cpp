@@ -6,7 +6,7 @@
 /*   By: npederen <npederen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 18:09:57 by npederen          #+#    #+#             */
-/*   Updated: 2025/12/17 19:36:19 by npederen         ###   ########.fr       */
+/*   Updated: 2025/12/18 15:08:25 by npederen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ FragTrap::FragTrap(const std::string name) : ClapTrap(name, 100, 100, 30)
 	std::cout << "FragTrap constructor with all parameters called" << std::endl;
 }
 
-FragTrap::FragTrap(const FragTrap &original)
+FragTrap::FragTrap(const FragTrap &original) : ClapTrap(original)
 {
 	std::cout << "FragTrap copy constructor called" << std::endl;
 	*this = original;
