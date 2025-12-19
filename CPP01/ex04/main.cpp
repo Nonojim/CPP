@@ -6,7 +6,7 @@
 /*   By: npederen <npederen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 14:11:16 by npederen          #+#    #+#             */
-/*   Updated: 2025/11/26 18:24:34 by npederen         ###   ########.fr       */
+/*   Updated: 2025/12/19 16:50:57 by npederen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,11 @@ int main(int argc, char **argv)
 {
 	if (argc == 4)
 	{
+		if (argv[2][0] == '\0' || argv[3][0] == '\0')
+		{
+			std::cout << "Please do not enter empty strings" << std::endl;
+			return (1);
+		}
 		std::ifstream infile;
 		infile.open(argv[1]);
 		if (!infile.is_open())
