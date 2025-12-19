@@ -6,7 +6,7 @@
 /*   By: npederen <npederen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 00:10:23 by npederen          #+#    #+#             */
-/*   Updated: 2025/11/25 02:27:46 by npederen         ###   ########.fr       */
+/*   Updated: 2025/12/19 16:43:09 by npederen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class HumanB
 
 	public:
 		HumanB();
-		HumanB(std::string);
+		HumanB(std::string name);
 		~HumanB();
 		void attack(void);
 		void setWeapon(Weapon &weapon);

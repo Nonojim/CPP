@@ -6,7 +6,7 @@
 /*   By: npederen <npederen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 00:09:39 by npederen          #+#    #+#             */
-/*   Updated: 2025/11/25 13:58:06 by npederen         ###   ########.fr       */
+/*   Updated: 2025/12/19 16:43:15 by npederen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class HumanA
 		Weapon &weapon;
 
 	public:
-		HumanA(std::string, Weapon &weapon);
+		HumanA(std::string name, Weapon &weapon);
 		~HumanA();
 		void attack(void);
 };
