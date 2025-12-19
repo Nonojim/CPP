@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: npederen <npederen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/17 13:22:44 by npederen          #+#    #+#             */
-/*   Updated: 2025/12/18 15:37:37 by npederen         ###   ########.fr       */
+/*   Created: 2025/12/18 15:52:10 by npederen          #+#    #+#             */
+/*   Updated: 2025/12/18 22:11:04 by npederen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
-#include "DiamondTrap.hpp"
+#ifndef DOG_HPP
+#define DOG_HPP
+#include "Animal.hpp"
+#include <iostream>
+#include <string>
 
-int main(void)
+class Dog : public Animal
 {
-	DiamondTrap one("Mage");
-	DiamondTrap two("Est");
-	DiamondTrap three("Lent");
-	
-	one.whoAmI();
-	two.whoAmI();
-	three.whoAmI();
-	DiamondTrap four(one);
-	four.whoAmI();
-	four.attack("BullShark");
-	four.guardGuate();
-	four.highFivesGuys();
-	return (0);
-}
+	protected:
+		std::string type;
+
+	public:
+		Dog();
+		~Dog();
+		Dog(const Dog &original);
+		Dog &operator=(const Dog &c);
+		void makeSound(void) const;
+};
+
+#endif

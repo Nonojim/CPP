@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: npederen <npederen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/17 13:22:44 by npederen          #+#    #+#             */
-/*   Updated: 2025/12/18 15:37:37 by npederen         ###   ########.fr       */
+/*   Created: 2025/12/18 15:51:56 by npederen          #+#    #+#             */
+/*   Updated: 2025/12/18 22:10:57 by npederen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
-#include "DiamondTrap.hpp"
+#ifndef CAT_HPP
+#define CAT_HPP
+#include "Animal.hpp"
+#include <iostream>
+#include <string>
 
-int main(void)
+class Cat : public Animal
 {
-	DiamondTrap one("Mage");
-	DiamondTrap two("Est");
-	DiamondTrap three("Lent");
-	
-	one.whoAmI();
-	two.whoAmI();
-	three.whoAmI();
-	DiamondTrap four(one);
-	four.whoAmI();
-	four.attack("BullShark");
-	four.guardGuate();
-	four.highFivesGuys();
-	return (0);
-}
+	protected:
+		std::string type;
+
+	public:
+		Cat();
+		~Cat();
+		Cat(const Cat &original);
+		Cat &operator=(const Cat &c);
+		void makeSound(void) const;
+};
+
+#endif

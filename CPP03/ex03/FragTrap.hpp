@@ -6,7 +6,7 @@
 /*   By: npederen <npederen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 18:10:07 by npederen          #+#    #+#             */
-/*   Updated: 2025/12/17 19:16:35 by npederen         ###   ########.fr       */
+/*   Updated: 2025/12/18 15:38:50 by npederen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ class FragTrap : virtual public ClapTrap
 		~FragTrap();
 		FragTrap &operator=(const FragTrap &c);
 		void attack(const std::string &target);
-		void guardGuate();
 		void highFivesGuys();
 };
 
