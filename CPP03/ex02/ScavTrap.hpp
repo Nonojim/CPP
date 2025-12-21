@@ -6,7 +6,7 @@
 /*   By: npederen <npederen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 14:37:49 by npederen          #+#    #+#             */
-/*   Updated: 2025/12/17 16:19:48 by npederen         ###   ########.fr       */
+/*   Updated: 2025/12/21 16:12:13 by npederen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ class ScavTrap : public ClapTrap
 {
 	public:
 		ScavTrap(void);
-		ScavTrap(const std::string name);
+		ScavTrap(const std::string &name);
 		ScavTrap(const ScavTrap &original);
 		~ScavTrap();
 		ScavTrap &operator=(const ScavTrap &c);

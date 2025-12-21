@@ -6,7 +6,7 @@
 /*   By: npederen <npederen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 18:21:56 by npederen          #+#    #+#             */
-/*   Updated: 2025/12/18 15:14:07 by npederen         ###   ########.fr       */
+/*   Updated: 2025/12/21 16:12:13 by npederen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ DiamondTrap::DiamondTrap() : ClapTrap()
 	std::cout << "Default DiamondTrap constructor called" << std::endl;
 }
 
-DiamondTrap::DiamondTrap(const std::string name)
+DiamondTrap::DiamondTrap(const std::string &name)
 	: ClapTrap(name + "_clap_name"), ScavTrap(name), FragTrap(name)
 {
 	std::cout << "DiamondTrap constructor with name called" << std::endl;

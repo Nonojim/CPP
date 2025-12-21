@@ -6,7 +6,7 @@
 /*   By: npederen <npederen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 18:10:07 by npederen          #+#    #+#             */
-/*   Updated: 2025/12/18 15:38:50 by npederen         ###   ########.fr       */
+/*   Updated: 2025/12/21 16:12:13 by npederen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ class FragTrap : virtual public ClapTrap
 {
 	public:
 		FragTrap(void);
-		FragTrap(const std::string name);
+		FragTrap(const std::string &name);
 		FragTrap(const FragTrap &original);
 		~FragTrap();
 		FragTrap &operator=(const FragTrap &c);

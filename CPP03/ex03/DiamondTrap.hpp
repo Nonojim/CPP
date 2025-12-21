@@ -6,7 +6,7 @@
 /*   By: npederen <npederen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 18:22:05 by npederen          #+#    #+#             */
-/*   Updated: 2025/12/18 15:06:21 by npederen         ###   ########.fr       */
+/*   Updated: 2025/12/21 16:12:13 by npederen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class DiamondTrap : public ScavTrap, public FragTrap
 
 	public:
 		DiamondTrap(void);
-		DiamondTrap(const std::string name);
+		DiamondTrap(const std::string &name);
 		DiamondTrap(const DiamondTrap &original);
 		~DiamondTrap();
 

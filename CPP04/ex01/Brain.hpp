@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: npederen <npederen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/17 18:10:07 by npederen          #+#    #+#             */
-/*   Updated: 2025/12/21 16:12:13 by npederen         ###   ########.fr       */
+/*   Created: 2025/12/21 12:26:24 by npederen          #+#    #+#             */
+/*   Updated: 2025/12/21 12:51:51 by npederen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef BRAIN_HPP
+#define BRAIN_HPP
+#include <iostream>
+#include <string>
 
-class FragTrap : public ClapTrap
+class Brain
 {
+	protected:
+		std::string ideas[100];
+
 	public:
-		FragTrap(void);
-		FragTrap(const std::string &name);
-		FragTrap(const FragTrap &original);
-		~FragTrap();
-		FragTrap &operator=(const FragTrap &c);
-		void attack(const std::string &target);
-		void highFivesGuys();
+		Brain();
+		~Brain();
+		Brain(const Brain &original);
+		Brain &operator=(const Brain &c);
 };
+
+#endif
