@@ -6,15 +6,16 @@
 /*   By: npederen <npederen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/18 15:52:00 by npederen          #+#    #+#             */
-/*   Updated: 2025/12/18 22:10:59 by npederen         ###   ########.fr       */
+/*   Updated: 2026/01/13 18:42:33 by npederen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat() : type("Cat")
+Cat::Cat()
 {
 	std::cout << "Default Cat constructor called" << std::endl;
+	this->type = "Cat";
 }
 
 Cat::Cat(const Cat &original) : Animal(original)

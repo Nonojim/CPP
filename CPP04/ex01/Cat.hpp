@@ -6,7 +6,7 @@
 /*   By: npederen <npederen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/18 15:51:56 by npederen          #+#    #+#             */
-/*   Updated: 2025/12/21 12:40:46 by npederen         ###   ########.fr       */
+/*   Updated: 2026/01/13 19:27:56 by npederen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,7 @@
 class Cat : public Animal
 {
 	private:
-		Brain *attribute;
-
-	protected:
-		std::string type;
+		Brain *brain;
 
 	public:
 		Cat();
@@ -31,6 +28,7 @@ class Cat : public Animal
 		Cat(const Cat &original);
 		Cat &operator=(const Cat &c);
 		void makeSound(void) const;
+		Brain *getBrain(void) const;
 };
 
 #endif

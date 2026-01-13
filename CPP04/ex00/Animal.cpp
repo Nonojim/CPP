@@ -6,7 +6,7 @@
 /*   By: npederen <npederen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/18 15:52:53 by npederen          #+#    #+#             */
-/*   Updated: 2025/12/18 22:11:01 by npederen         ###   ########.fr       */
+/*   Updated: 2026/01/13 18:44:06 by npederen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 Animal::Animal()
 {
 	std::cout << "Default Animal constructor called" << std::endl;
+	this->type = "Animal";
 }
 
 Animal::Animal(const Animal &original)

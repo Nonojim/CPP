@@ -6,15 +6,16 @@
 /*   By: npederen <npederen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/18 15:52:26 by npederen          #+#    #+#             */
-/*   Updated: 2025/12/18 22:11:03 by npederen         ###   ########.fr       */
+/*   Updated: 2026/01/13 18:42:15 by npederen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog() : type("Dog")
+Dog::Dog()
 {
 	std::cout << "Default Dog constructor called" << std::endl;
+	this->type = "Dog";
 }
 
 Dog::Dog(const Dog &original) : Animal(original)

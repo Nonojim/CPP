@@ -6,7 +6,7 @@
 /*   By: npederen <npederen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/18 15:52:10 by npederen          #+#    #+#             */
-/*   Updated: 2025/12/18 22:11:04 by npederen         ###   ########.fr       */
+/*   Updated: 2026/01/13 18:41:31 by npederen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,6 @@
 
 class Dog : public Animal
 {
-	protected:
-		std::string type;
-
 	public:
 		Dog();
 		~Dog();

@@ -1,9 +1,8 @@
 FILES		=	main.cpp		\
-				Dog.cpp			\
 				Animal.cpp		\
+				Dog.cpp			\
 				Cat.cpp			\
-				WrongCat.cpp	\
-				WrongAnimal.cpp
+				Brain.cpp
 
 NAME		= cries
 
