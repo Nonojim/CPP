@@ -6,12 +6,14 @@
 /*   By: npederen <npederen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 18:34:53 by npederen          #+#    #+#             */
-/*   Updated: 2025/11/28 20:23:37 by npederen         ###   ########.fr       */
+/*   Updated: 2026/01/20 15:33:23 by npederen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 #include "Point.hpp"
+
+// https://stackoverflow.com/questions/2049582/how-to-determine-if-a-point-is-in-a-2d-triangle#:~:text=A%20simple%20way%20is%20to,point%20is%20inside%20the%20triangle.
 
 Fixed sign(Point p1, Point p2, Point p3)
 {
