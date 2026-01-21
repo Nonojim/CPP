@@ -6,7 +6,7 @@
 /*   By: npederen <npederen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 18:21:56 by npederen          #+#    #+#             */
-/*   Updated: 2025/12/21 16:12:13 by npederen         ###   ########.fr       */
+/*   Updated: 2026/01/21 18:30:19 by npederen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ DiamondTrap::DiamondTrap(const std::string &name)
 {
 	std::cout << "DiamondTrap constructor with name called" << std::endl;
 	this->name = name;
-	this->hitPoint = FragTrap::hitPoint;
-	this->energyPoint = ScavTrap::energyPoint;
-	this->attackDamage = FragTrap::attackDamage;
+	this->hitPoint = 100;
+	this->energyPoint = 50;
+	this->attackDamage = 30;
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap &original)
