@@ -6,7 +6,7 @@
 /*   By: npederen <npederen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/18 15:46:48 by npederen          #+#    #+#             */
-/*   Updated: 2026/01/13 19:54:15 by npederen         ###   ########.fr       */
+/*   Updated: 2026/01/21 16:16:39 by npederen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,17 @@
 int main()
 {
 	const int arraySize = 4;
+	int i = 0;
 	Animal *animals[arraySize];
 
 	std::cout << "=== Creating Animals ===" << std::endl;
-	for (int i = 0; i < arraySize; ++i)
+	while (i < arraySize)
 	{
 		if (i < arraySize / 2)
 			animals[i] = new Dog();
 		else
 			animals[i] = new Cat();
+		i++;
 	}
 
 	std::cout << "\n=== Testing makeSound ===" << std::endl;
@@ -60,8 +62,9 @@ int main()
 	delete originalCat;
 
 	std::cout << "\n=== Deleting Animals ===" << std::endl;
-	for (int i = 0; i < arraySize; ++i)
-		delete animals[i];
+	i = 0;
+	while (i < arraySize)
+		delete animals[i++];
 
-	return 0;
+	return (0);
 }
