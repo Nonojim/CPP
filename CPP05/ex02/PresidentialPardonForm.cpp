@@ -6,7 +6,7 @@
 /*   By: npederen <npederen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 13:07:57 by npederen          #+#    #+#             */
-/*   Updated: 2026/01/29 13:48:18 by npederen         ###   ########.fr       */
+/*   Updated: 2026/01/29 16:05:10 by npederen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,5 @@ const PresidentialPardonForm &src)
 
 void PresidentialPardonForm::executeAction() const
 {
-	std::cout << "PresidentialPardonForm executed" << std::endl;
+	std::cout << this->getTarget() << " has been pardoned by Zaphod Beeblebrox." << std::endl;
 }

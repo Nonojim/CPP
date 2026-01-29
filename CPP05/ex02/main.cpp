@@ -6,7 +6,7 @@
 /*   By: npederen <npederen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 13:54:08 by npederen          #+#    #+#             */
-/*   Updated: 2026/01/29 15:23:18 by npederen         ###   ########.fr       */
+/*   Updated: 2026/01/29 16:07:33 by npederen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 int main(void)
 {
-	std::cout << "\n---- John can sign & execute the form ---- " << std::endl;
+	std::cout << "\n---- John can sign & execute the shrubbery form ---- " << std::endl;
 	try
 	{
 		Bureaucrat john("John", 137);
@@ -36,9 +36,9 @@ int main(void)
 	std::cout << "\n---- John cannot sign the form ---- " << std::endl;
 	try
 	{
-		Bureaucrat john("John", 29);
+		Bureaucrat john("John", 121);
 		std::cout << john << std::endl;
-		PresidentialPardonForm form;
+		PresidentialPardonForm form("Nolan");
 		std::cout << form << std::endl;
 		john.signForm(form);
 		john.executeForm(form);
