@@ -1,9 +1,10 @@
-FILES		=	main.cpp				\
-				Bureaucrat.cpp			\
-				AForm.cpp				\
+FILES		=	main.cpp					\
+				Bureaucrat.cpp				\
+				AForm.cpp					\
 				RobotomyRequestForm.cpp		\
 				ShrubberyCreationForm.cpp	\
-				PresidentialPardonForm.cpp
+				PresidentialPardonForm.cpp	\
+				Intern.cpp
 
 
 NAME		= form
@@ -30,7 +31,7 @@ $(OBJDIR)/%.o: %.cpp
 clean:
 	@echo "\033[1;32m" "Cleaning .o \033[0m"
 	@$(RM) $(OBJDIR)
-#	@$(RM) *_shrubbery
+#	@$(RM) *_shrubbery pls allow me
 
 fclean: clean
 	@echo "\033[1;32m" "Cleaning program \033[0m"
