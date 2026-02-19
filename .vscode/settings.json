@@ -75,5 +75,6 @@
 		"queue": "cpp",
 		"ranges": "cpp",
 		"fstream": "cpp"
-	}
+	},
+	"C_Cpp.errorSquiggles": "disabled"
 }
