@@ -6,34 +6,34 @@
 /*   By: npederen <npederen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/19 14:23:49 by npederen          #+#    #+#             */
-/*   Updated: 2026/02/20 13:38:00 by npederen         ###   ########.fr       */
+/*   Updated: 2026/02/20 14:02:55 by npederen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
 
-//ScalarConverter::ScalarConverter()
-//{
-//	std::cout << "Default constructor called" << std::endl;
-//}
-//
-//ScalarConverter::~ScalarConverter()
-//{
-//	std::cout << "Destructor called" << std::endl;
-//}
-//
-//ScalarConverter::ScalarConverter(const ScalarConverter &src)
-//{
-//	std::cout << "Copy constructor called" << std::endl;
-//	*this = src;
-//}
-//
-//ScalarConverter &ScalarConverter::operator=(const ScalarConverter &src)
-//{
-//	(void)src;
-//	std::cout << "Copy assignment operator called" << std::endl;
-//	return (*this);
-//}
+ScalarConverter::ScalarConverter()
+{
+	std::cout << "Default constructor called" << std::endl;
+}
+
+ScalarConverter::~ScalarConverter()
+{
+	std::cout << "Destructor called" << std::endl;
+}
+
+ScalarConverter::ScalarConverter(const ScalarConverter &src)
+{
+	std::cout << "Copy constructor called" << std::endl;
+	*this = src;
+}
+
+ScalarConverter &ScalarConverter::operator=(const ScalarConverter &src)
+{
+	(void)src;
+	std::cout << "Copy assignment operator called" << std::endl;
+	return (*this);
+}
 
 void ScalarConverter::print(double value)
 {
