@@ -6,7 +6,7 @@
 /*   By: npederen <npederen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 12:16:25 by npederen          #+#    #+#             */
-/*   Updated: 2026/01/29 14:07:18 by npederen         ###   ########.fr       */
+/*   Updated: 2026/02/20 14:47:32 by npederen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #define PRESIDENTIALPARDONFORM_HPP
 
 #include "AForm.hpp"
+#include <iostream>
+#include <string>
 
 class PresidentialPardonForm : public AForm
 {
@@ -25,7 +27,7 @@ class PresidentialPardonForm : public AForm
 		PresidentialPardonForm &operator=(const PresidentialPardonForm &src);
 
 	protected:
-		 void executeAction() const;
+		void executeAction() const;
 };
 
 #endif

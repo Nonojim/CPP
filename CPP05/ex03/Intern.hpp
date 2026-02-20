@@ -6,7 +6,7 @@
 /*   By: npederen <npederen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 16:57:33 by npederen          #+#    #+#             */
-/*   Updated: 2026/01/29 17:17:19 by npederen         ###   ########.fr       */
+/*   Updated: 2026/02/20 14:47:28 by npederen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #define INTERN_HPP
 
 #include "AForm.hpp"
+#include <iostream>
+#include <string>
 
 class Intern
 {

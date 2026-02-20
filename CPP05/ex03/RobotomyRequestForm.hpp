@@ -6,7 +6,7 @@
 /*   By: npederen <npederen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 12:20:02 by npederen          #+#    #+#             */
-/*   Updated: 2026/01/29 14:05:04 by npederen         ###   ########.fr       */
+/*   Updated: 2026/02/20 14:47:36 by npederen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #define ROBOTOMYREQUESTFORM_HPP
 
 #include "AForm.hpp"
+#include <iostream>
+#include <string>
 
 class RobotomyRequestForm : public AForm
 {
