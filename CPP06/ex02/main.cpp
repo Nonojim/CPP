@@ -6,7 +6,7 @@
 /*   By: npederen <npederen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 14:15:42 by npederen          #+#    #+#             */
-/*   Updated: 2026/02/20 14:36:26 by npederen         ###   ########.fr       */
+/*   Updated: 2026/02/20 14:37:47 by npederen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,5 +96,6 @@ int main(void)
 	identify(unknown);
 	identify(*unknown);
 	delete (unknown);
+
 	return (0);
 };

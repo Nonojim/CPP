@@ -6,7 +6,7 @@
 /*   By: npederen <npederen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 14:15:54 by npederen          #+#    #+#             */
-/*   Updated: 2026/02/20 14:36:45 by npederen         ###   ########.fr       */
+/*   Updated: 2026/02/20 14:37:49 by npederen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,5 @@ class B : public Base
 class C : public Base
 {
 };
+
 #endif
