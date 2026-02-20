@@ -6,7 +6,7 @@
 /*   By: npederen <npederen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/19 14:23:47 by npederen          #+#    #+#             */
-/*   Updated: 2026/02/19 21:51:30 by npederen         ###   ########.fr       */
+/*   Updated: 2026/02/20 13:37:05 by npederen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,6 @@
 class ScalarConverter
 {
 	public:
-		ScalarConverter();
-		~ScalarConverter();
-		ScalarConverter(const ScalarConverter &src);
-		ScalarConverter &operator=(const ScalarConverter &src);
-
 		static void convert(std::string str);
 
 		class BadInput : public std::exception
@@ -38,6 +33,10 @@ class ScalarConverter
 		static bool isFloat(const std::string &str);
 
 	private:
+		ScalarConverter();
+		~ScalarConverter();
+		ScalarConverter(const ScalarConverter &src);
+		ScalarConverter &operator=(const ScalarConverter &src);
 		enum e_type
 		{
 			CHAR,
