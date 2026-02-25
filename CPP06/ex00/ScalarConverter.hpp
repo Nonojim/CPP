@@ -6,17 +6,19 @@
 /*   By: npederen <npederen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/19 14:23:47 by npederen          #+#    #+#             */
-/*   Updated: 2026/02/20 13:37:05 by npederen         ###   ########.fr       */
+/*   Updated: 2026/02/25 16:51:58 by npederen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SCALARCONVERTER_HPP
 #define SCALARCONVERTER_HPP
 
+#include <cfloat>
 #include <climits>
 #include <cmath>
 #include <cstddef>
 #include <cstdlib>
+#include <cstring>
 #include <iostream>
 #include <string>
 
