@@ -6,7 +6,7 @@
 /*   By: npederen <npederen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 20:06:39 by npederen          #+#    #+#             */
-/*   Updated: 2026/02/20 21:05:11 by npederen         ###   ########.fr       */
+/*   Updated: 2026/02/25 14:15:55 by npederen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 template <typename T> Array<T>::Array()
 {
-	_data = NULL;
+	_data = new T[0];
 	_size = 0;
 }
 
@@ -29,7 +29,7 @@ template <typename T> Array<T>::Array(const Array &src)
 {
 	_size = src._size;
 	if (_size == 0)
-		_data = NULL;
+		_data = new T[0];
 	else
 	{
 		_data = new T[_size];
@@ -51,7 +51,7 @@ template <typename T> Array<T> &Array<T>::operator=(const Array &src)
 		_size = src._size;
 
 		if (_size == 0)
-			_data = NULL;
+			_data = new T[0];
 		else
 		{
 			_data = new T[_size];
