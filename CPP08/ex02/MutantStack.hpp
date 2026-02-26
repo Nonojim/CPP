@@ -6,7 +6,7 @@
 /*   By: npederen <npederen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/26 18:30:25 by npederen          #+#    #+#             */
-/*   Updated: 2026/02/26 19:57:39 by npederen         ###   ########.fr       */
+/*   Updated: 2026/02/26 20:09:05 by npederen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,12 @@ template <typename T> class MutantStack : public std::stack<T>
 {
 
 	public:
+		MutantStack();
+		MutantStack(unsigned int n);
+		~MutantStack();
+		MutantStack(const MutantStack &src);
+		MutantStack &operator=(const MutantStack &src);
+
 		typedef typename std::stack<T>::container_type::iterator iterator;
 		typedef typename std::stack<T>::container_type::const_iterator const_iterator;
 
