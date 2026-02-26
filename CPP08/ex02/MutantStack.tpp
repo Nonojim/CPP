@@ -1,0 +1,38 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   MutantStack.tpp                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: npederen <npederen@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/02/26 18:58:48 by npederen          #+#    #+#             */
+/*   Updated: 2026/02/26 19:58:58 by npederen         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef MUTANTSTACK_TPP
+#define MUTANTSTACK_TPP
+
+#include "MutantStack.hpp"
+
+template <typename T> MutantStack::MutantStack()
+{
+	std::cout << "Default constructor called" << std::endl;
+}
+template <typename T> MutantStack::~MutantStack()
+{
+	std::cout << "Destructor called" << std::endl;
+}
+template <typename T> MutantStack::MutantStack(const MutantStack &src)
+{
+	std::cout << "Copy constructor called" << std::endl;
+	*this = src;
+}
+template <typename T> MutantStack &MutantStack::operator=(const MutantStack &src)
+{
+	(void)src;
+	std::cout << "Copy assignment operator called" << std::endl;
+	return (*this);
+}
+
+#endif
