@@ -1,21 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   easyfind.tpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: npederen <npederen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/25 20:58:50 by npederen          #+#    #+#             */
-/*   Updated: 2026/02/26 21:39:03 by npederen         ###   ########.fr       */
+/*   Created: 2026/02/26 21:19:09 by npederen          #+#    #+#             */
+/*   Updated: 2026/02/26 21:42:25 by npederen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "easyfind.hpp"
+#ifndef EASYFIND_TPP
+#define EASYFIND_TPP
 
-int main(void)
+template <typename T> void easyfind(T &container, int value)
 {
-	int tmpArray[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-	std::vector<int> dArray(tmpArray, tmpArray + 10);
-	easyfind(dArray, 0);
-	return (0);
+	if (std::find(container.begin(), container.end(), value) != container.end())
+	{
+		std::cout << "Value found" << std::endl;
+	}
+	else
+	{
+		throw NoValueFound();
+	}
 }
+
+#endif

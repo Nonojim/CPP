@@ -6,7 +6,7 @@
 /*   By: npederen <npederen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/26 18:30:25 by npederen          #+#    #+#             */
-/*   Updated: 2026/02/26 20:09:05 by npederen         ###   ########.fr       */
+/*   Updated: 2026/02/26 20:17:06 by npederen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,21 +27,12 @@ template <typename T> class MutantStack : public std::stack<T>
 		MutantStack &operator=(const MutantStack &src);
 
 		typedef typename std::stack<T>::container_type::iterator iterator;
-		typedef typename std::stack<T>::container_type::const_iterator const_iterator;
 
 		iterator begin()
 		{
 			return this->c.begin();
 		};
 		iterator end()
-		{
-			return this->c.end();
-		};
-		const_iterator begin() const
-		{
-			return this->c.begin();
-		};
-		const_iterator end() const
 		{
 			return this->c.end();
 		};

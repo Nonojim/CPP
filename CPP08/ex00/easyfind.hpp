@@ -1,21 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: npederen <npederen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/25 20:58:50 by npederen          #+#    #+#             */
-/*   Updated: 2026/02/26 21:39:03 by npederen         ###   ########.fr       */
+/*   Created: 2026/02/26 21:18:27 by npederen          #+#    #+#             */
+/*   Updated: 2026/02/26 21:45:35 by npederen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "easyfind.hpp"
+#ifndef EASYFIND_HPP
+#define EASYFIND_HPP
 
-int main(void)
+#include <algorithm>
+#include <iostream>
+#include <vector>
+
+template <typename T> void easyfind(T &container, int value);
+
+class NoValueFound : public std::exception
 {
-	int tmpArray[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-	std::vector<int> dArray(tmpArray, tmpArray + 10);
-	easyfind(dArray, 0);
-	return (0);
-}
+	public:
+		virtual const char *what() const throw()
+		{
+			return ("No corresponding value found.");
+		}
+};
+
+#include "easyfind.tpp"
+
+#endif
