@@ -6,7 +6,7 @@
 /*   By: npederen <npederen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 15:12:28 by npederen          #+#    #+#             */
-/*   Updated: 2026/04/16 20:19:07 by npederen         ###   ########.fr       */
+/*   Updated: 2026/04/16 21:53:26 by npederen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,5 @@ int main(int argc, char **argv)
 	BitcoinExchange btc;
 	btc.loadDb("data.csv");
 	btc.getExcRate(argv[1]);
-
 	return (0);
 }

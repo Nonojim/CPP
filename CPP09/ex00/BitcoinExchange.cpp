@@ -6,7 +6,7 @@
 /*   By: npederen <npederen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 15:13:01 by npederen          #+#    #+#             */
-/*   Updated: 2026/04/16 20:19:18 by npederen         ###   ########.fr       */
+/*   Updated: 2026/04/16 21:48:22 by npederen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,16 @@ BitcoinExchange::~BitcoinExchange()
 	// std::cout << "Destructor called" << std::endl;
 }
 
-BitcoinExchange::BitcoinExchange(const BitcoinExchange &src)
+BitcoinExchange::BitcoinExchange(const BitcoinExchange &src) : _data(src._data)
 {
 	std::cout << "Copy constructor called" << std::endl;
-	*this = src;
 }
 
 BitcoinExchange &BitcoinExchange::operator=(const BitcoinExchange &src)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &src)
-		this->_data = src.getData();
+		this->_data = _data = src._data;
 	return (*this);
 }
 
@@ -60,6 +59,10 @@ int BitcoinExchange::validDate(const std::string &date) const
 	int year = std::atoi(date.substr(0, 4).c_str());
 	int month = std::atoi(date.substr(5, 2).c_str());
 	int day = std::atoi(date.substr(8, 2).c_str());
+	if (month < 1 || month > 12)
+		return (0);
+	if (day < 1 || day > 31)
+		return (0);
 	if ((month % 2 == 0 && day > 30 && month < 8) ||
 		(month % 2 != 0 && day > 30 && month >= 8))
 		return (0);
@@ -68,7 +71,6 @@ int BitcoinExchange::validDate(const std::string &date) const
 	else if ((!((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) && day > 28 &&
 			  month == 2))
 		return (0);
-
 	return (1);
 }
 
@@ -95,11 +97,14 @@ int BitcoinExchange::validExcValue(const std::string &value, const int mode) con
 	return (1);
 }
 
-void BitcoinExchange::loadDb(const std::string fileName)
+void BitcoinExchange::loadDb(const std::string &fileName)
 {
 	std::ifstream file(fileName.c_str());
 	if (!file.is_open())
+	{
 		std::cout << "Error: cannot open csv file !" << std::endl;
+		return;
+	}
 	std::string line;
 	std::getline(file, line);
 	while (std::getline(file, line))
@@ -112,22 +117,26 @@ void BitcoinExchange::loadDb(const std::string fileName)
 		{
 			std::cout << "Error: invalid date in csv file => " << date << ", " << value
 					  << std::endl;
+			continue;
 		}
 		if (!validExcValue(value, 0))
 		{
-
 			std::cout << "Error: bad database input => " << line << std::endl;
+			continue;
 		}
 		_data[date] = static_cast<float>(std::strtod(value.c_str(), NULL));
 	}
 	file.close();
 }
 
-float BitcoinExchange::getExcRate(const std::string fileName) const
+void BitcoinExchange::getExcRate(const std::string &fileName) const
 {
 	std::ifstream file(fileName.c_str());
 	if (!file.is_open())
+	{
 		std::cout << "Error: cannot open input file !" << std::endl;
+		return;
+	}
 	std::string line;
 	std::getline(file, line);
 	while (std::getline(file, line))
@@ -169,5 +178,4 @@ float BitcoinExchange::getExcRate(const std::string fileName) const
 		}
 	}
 	file.close();
-	return (0);
 }

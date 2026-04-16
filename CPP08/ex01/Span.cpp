@@ -6,7 +6,7 @@
 /*   By: npederen <npederen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/26 21:47:05 by npederen          #+#    #+#             */
-/*   Updated: 2026/02/26 23:35:30 by npederen         ###   ########.fr       */
+/*   Updated: 2026/04/16 20:49:16 by npederen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,30 +14,30 @@
 
 Span::Span()
 {
-	//std::cout << "Default Span constructor called" << std::endl;
+	// std::cout << "Default Span constructor called" << std::endl;
 }
 
 Span::Span(unsigned int N) : _size(N)
 {
-	//std::cout << "Size specified Span constructor called" << std::endl;
+	// std::cout << "Size specified Span constructor called" << std::endl;
 }
 
 Span::~Span()
 {
-	//std::cout << "Default Span destructor called" << std::endl;
+	// std::cout << "Default Span destructor called" << std::endl;
 }
 
 Span::Span(const Span &src)
 
 {
-	//std::cout << "Default Span copy constructor called" << std::endl;
+	// std::cout << "Default Span copy constructor called" << std::endl;
 
 	*this = src;
 }
 
 Span &Span::operator=(const Span &src)
 {
-	//std::cout << "Span copy assignement operator called" << std::endl;
+	// std::cout << "Span copy assignement operator called" << std::endl;
 	if (this != &src)
 	{
 		this->_size = src._size;

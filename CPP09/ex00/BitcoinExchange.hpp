@@ -6,7 +6,7 @@
 /*   By: npederen <npederen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 15:13:21 by npederen          #+#    #+#             */
-/*   Updated: 2026/04/16 20:19:15 by npederen         ###   ########.fr       */
+/*   Updated: 2026/04/16 21:02:01 by npederen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,10 @@ class BitcoinExchange
 		BitcoinExchange &operator=(const BitcoinExchange &src);
 		std::map<std::string, float> getData(void) const;
 
-		void loadDb(const std::string fileName);
+		void loadDb(const std::string &fileName);
 		int validDate(const std::string &date) const;
 		int validExcValue(const std::string &value, const int mode) const;
-		float getExcRate(const std::string fileName) const;
+		void getExcRate(const std::string &fileName) const;
 };
 
 #endif
