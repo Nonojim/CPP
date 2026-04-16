@@ -6,7 +6,7 @@
 /*   By: npederen <npederen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 15:13:01 by npederen          #+#    #+#             */
-/*   Updated: 2026/04/16 14:49:00 by npederen         ###   ########.fr       */
+/*   Updated: 2026/04/16 20:19:18 by npederen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 BitcoinExchange::BitcoinExchange()
 {
-	std::cout << "Default constructor called" << std::endl;
+	// std::cout << "Default constructor called" << std::endl;
 }
 
 BitcoinExchange::~BitcoinExchange()
 {
-	std::cout << "Destructor called" << std::endl;
+	// std::cout << "Destructor called" << std::endl;
 }
 
 BitcoinExchange::BitcoinExchange(const BitcoinExchange &src)
@@ -36,7 +36,7 @@ BitcoinExchange &BitcoinExchange::operator=(const BitcoinExchange &src)
 	return (*this);
 }
 
-std::map<std::string, double> BitcoinExchange::getData(void) const
+std::map<std::string, float> BitcoinExchange::getData(void) const
 {
 	return (this->_data);
 }
@@ -60,7 +60,6 @@ int BitcoinExchange::validDate(const std::string &date) const
 	int year = std::atoi(date.substr(0, 4).c_str());
 	int month = std::atoi(date.substr(5, 2).c_str());
 	int day = std::atoi(date.substr(8, 2).c_str());
-	// std::cout << year << " " << month << " " << day << " " << std::endl;
 	if ((month % 2 == 0 && day > 30 && month < 8) ||
 		(month % 2 != 0 && day > 30 && month >= 8))
 		return (0);
@@ -73,14 +72,26 @@ int BitcoinExchange::validDate(const std::string &date) const
 	return (1);
 }
 
-int BitcoinExchange::validExcValue(const std::string &value) const
+int BitcoinExchange::validExcValue(const std::string &value, const int mode) const
 {
-	// std::cout << "string: " << value << std::endl;
-	double n;
-	char *e;
-	n = (std::strtod(value.c_str(), &e));
-	if (*e != '\0')
+	double number;
+	char *end;
+	number = (std::strtod(value.c_str(), &end));
+	if (*end != '\0')
 		return (0);
+	if (mode == 1)
+	{
+		if (number < 0)
+		{
+			std::cout << "Error: not a positive number." << std::endl;
+			return (2);
+		}
+		if (number > 1000)
+		{
+			std::cout << "Error: too large a number." << std::endl;
+			return (3);
+		}
+	}
 	return (1);
 }
 
@@ -90,7 +101,6 @@ void BitcoinExchange::loadDb(const std::string fileName)
 	if (!file.is_open())
 		std::cout << "Error: cannot open csv file !" << std::endl;
 	std::string line;
-	std::cout << "date,exchange_rate" << std::endl;
 	std::getline(file, line);
 	while (std::getline(file, line))
 	{
@@ -100,15 +110,64 @@ void BitcoinExchange::loadDb(const std::string fileName)
 		value = line.substr(line.find(',') + 1);
 		if (!validDate(date))
 		{
-			std::cout << "Error: invalid date in csv file -> " << date << ", " << value
+			std::cout << "Error: invalid date in csv file => " << date << ", " << value
 					  << std::endl;
 		}
-		if (!validExcValue(value))
+		if (!validExcValue(value, 0))
 		{
 
-			std::cout << "Error: invalid value in csv file -> " << date << ", " << value
+			std::cout << "Error: bad database input => " << line << std::endl;
+		}
+		_data[date] = static_cast<float>(std::strtod(value.c_str(), NULL));
+	}
+	file.close();
+}
+
+float BitcoinExchange::getExcRate(const std::string fileName) const
+{
+	std::ifstream file(fileName.c_str());
+	if (!file.is_open())
+		std::cout << "Error: cannot open input file !" << std::endl;
+	std::string line;
+	std::getline(file, line);
+	while (std::getline(file, line))
+	{
+		std::string date;
+		std::string value;
+		date = line.substr(0, line.find(" | "));
+		value = line.substr(line.find(" | ") + 3);
+		if (!validDate(date))
+		{
+			std::cout << "Error: bad input date => " << date << " | " << value
 					  << std::endl;
+			continue;
+		}
+		int ret = 0;
+		if ((ret = validExcValue(value, 1)) != 1)
+		{
+			if (ret == 0)
+				std::cout << "Error: bad input value => " << line << std::endl;
+			continue;
+		}
+		float rate = 0;
+		std::map<std::string, float>::const_iterator it = _data.lower_bound(date);
+		if (it != _data.end() && it->first == date)
+		{
+			rate = it->second;
+			std::cout << date << " => " << value << " = "
+					  << rate * static_cast<float>(std::atof(value.c_str())) << std::endl;
+		}
+		else if (it == _data.begin())
+			std::cout << "Error: date is older than the oldest in the database !"
+					  << std::endl;
+		else
+		{
+			it--;
+			rate = it->second;
+			std::cout << date << " => " << value << " = "
+					  << rate * static_cast<float>(std::atof(value.c_str())) << std::endl;
 		}
 	}
 	file.close();
+	return (0);
 }
