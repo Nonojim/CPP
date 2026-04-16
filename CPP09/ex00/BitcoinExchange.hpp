@@ -6,7 +6,7 @@
 /*   By: npederen <npederen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 15:13:21 by npederen          #+#    #+#             */
-/*   Updated: 2026/04/15 20:45:30 by npederen         ###   ########.fr       */
+/*   Updated: 2026/04/16 13:43:22 by npederen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ class BitcoinExchange
 		std::map<std::string, double> getData(void) const;
 
 		void loadDb(const std::string fileName);
-		int validDate(const std::string date);
+		int validDate(const std::string &date) const;
+		int validExcValue(const std::string &value) const;
 };
 
 #endif
